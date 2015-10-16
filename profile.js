@@ -60,10 +60,10 @@ function makeProfile(){
 	for (var x=10; x<windowWidth; x = x+100){
 		for(var y=0; y<windowHeight; y = y+50){
 			if (x<450 || x > 800){
-	var nameElement = createElement("h2", submittedName);
-	var cityElement = createElement("h2", submittedCity);
-	var colorElement = createElement("h2", submittedColor);
-	var foodElement = createElement("h2", submittedFood);
+	var nameElement = createElement("h3", submittedName);
+	var cityElement = createElement("h3", submittedCity);
+	var colorElement = createElement("h3", submittedColor);
+	var foodElement = createElement("h3", submittedFood);
 
     var randomG = Math.floor(random(255));
     var randomB = Math.floor(random(255));
@@ -96,6 +96,7 @@ function makeProfile(){
 
 function unHide(){
 
+	button2.hide();
 
 	username.show();
 	city.show();
@@ -107,9 +108,29 @@ function unHide(){
 	foodLabel.show();
 	button.show();
 
-	
-    button2.hide();
+	username.value("");
+	city.value("");
+	favcolor.value("");
+	food.value("");
 
+	username.style("display","inline-block");
+	city.style("display","inline-block");
+	favcolor.style("display","inline-block");
+	food.style("display","inline-block");
+
+
+	var allh3 = selectAll("h3");
+
+
+	for(var x=0; x<windowWidth; x++ ){
+		for(var y=0; y<windowHeight; y++){
+
+		allh3[x].hide();
+		allh3[y].hide();
+	
+	}
+	}
+	
 
 }
 
